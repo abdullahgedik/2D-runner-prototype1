@@ -44,7 +44,9 @@ public class PlayerMovement : MonoBehaviour
             if(IsGrounded())
                 speed *= -1;
             if(!IsGrounded())
+            {
                 speed *= -speedMultiply;
+            }
         }
     }
 
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }

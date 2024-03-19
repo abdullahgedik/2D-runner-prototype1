@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Project Duckling.sln"
+    "dotnet.defaultSolution": "project_duckling.sln"
 }

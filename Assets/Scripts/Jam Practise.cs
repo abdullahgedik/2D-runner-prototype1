@@ -11,7 +11,9 @@ public class JamPractise : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float dragLimit;
     [SerializeField] private float forceToAdd;
+    [SerializeField] private float throwCooldown;
 
+    private bool isThrowable = true;
     private Camera cam;
     private bool isDragging;
 
@@ -36,7 +38,7 @@ public class JamPractise : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && !isDragging)
+        if(Input.GetMouseButtonDown(0) && !isDragging && isThrowable)
         {
             DragStart();
         }
@@ -45,7 +47,10 @@ public class JamPractise : MonoBehaviour
             Drag();
 
         if(Input.GetMouseButtonUp(0) && isDragging)
+        {
             DragEnd();
+            StartCoroutine(ThrowTimer());
+        }
     }
 
     void DragStart()
@@ -85,5 +90,12 @@ public class JamPractise : MonoBehaviour
         Vector3 finalForce = distance * forceToAdd;
 
         rb.AddForce(-finalForce, ForceMode2D.Impulse);
+    }
+
+    IEnumerator ThrowTimer()
+    {
+        isThrowable = false;
+        yield return new WaitForSeconds(throwCooldown);
+        isThrowable = true;
     }
 }

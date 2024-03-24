@@ -2072,6 +2072,7 @@ GameObject:
   - component: {fileID: 644251346}
   - component: {fileID: 644251348}
   - component: {fileID: 644251351}
+  - component: {fileID: 644251352}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2475,6 +2476,19 @@ MonoBehaviour:
   bouncy: {fileID: 6200000, guid: 402d2010f1902874292031dd49555021, type: 2}
   notBouncy: {fileID: 6200000, guid: a7e786cb14b148045b315bd50879417e, type: 2}
   isSticky: 0
+--- !u!114 &644251352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644251343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d01260f258c8de4f94734d06a262ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &803929030
 GameObject:
   m_ObjectHideFlags: 0

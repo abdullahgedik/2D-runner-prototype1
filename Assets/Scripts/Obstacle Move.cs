@@ -15,4 +15,9 @@ public class ObstacleMove : MonoBehaviour
     {
         transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
     }
+
+    public void IncreaseSpeed()
+    {
+
+    }
 }
